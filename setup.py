@@ -4,10 +4,10 @@ from setuptools import (
 
 setup(
     name="multiJump",
-    version = "0.0.1",
+    version = "0.0.4",
     author="seqyuan",
     author_email='seqyuan@gmail.com',
-    url="www.seqyuan.com",
+    url="https://github.com/seqyuan/multiJump/wiki",
     download_url = "https://codeload.github.com/seqyuan/multiJump/zip/master",
     description="multiple Jump IP do something",
     long_description="""Mid Jump IP rum cmd and Jump to End IP rum cmd""",

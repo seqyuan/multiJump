@@ -1,10 +1,9 @@
 #! /usr/bin/env python3
 # coding=utf-8
-
-#import sys
-#import paramiko
-#import socket
-#import time 
+import sys
+import paramiko
+import socket
+import time 
 
 class ParaProxy(paramiko.util.ClosingContextManager):  
     """  
