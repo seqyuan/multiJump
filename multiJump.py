@@ -4,12 +4,7 @@
 import sys
 import paramiko
 import socket
-import time  
-from paramiko.ssh_exception import SSHException  
-
-__author__ = 'Yuan Zan'
-__mail__= 'seqyuan@gmail.com'
-__date__= '20180427'
+import time 
 
 class ParaProxy(paramiko.util.ClosingContextManager):  
     """  
@@ -78,7 +73,7 @@ class jump_exe_cmd:
             print('stdout %s' % (''.join(stdout.readlines())))  
             error_msg = ''.join(stderr.readlines())
             if error_msg != '':  
-                raise SSHException(error_msg)  
+                raise paramiko.ssh_exception(error_msg)  
             else:  
                 print ('run cmd %s on %s successfully!' % (self.cmd_mid, self.mid_host_ip))  
             stderr.close()  
