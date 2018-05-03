@@ -1,8 +1,10 @@
-## Example
+### pypi
+https://pypi.org/project/multiJump/
+### Install multiJump
+`pip3 install multiJump`
+### Example
 ```
-import sys
 import getpass
-sys.path.append('/home/yuanzan/test/multiJump_test/lib/python3.3/site-packages/multiJump')
 import multiJump as mJ
 
 mid_cli_usr = getpass.getuser()
@@ -14,5 +16,4 @@ jump_obj.exe_cmd()
 
 jump_obj2 = mJ.jump_exe_cmd(mid_host_ip='c0008', end_host_ip='192.168.60.188', end_port=50732, cmd_mid=mid_cmd , cmd_end_to_exe=end_cmd, mid_username=mid_cli_usr, end_host_user=mid_cli_usr)
 jump_obj2.exe_cmd()
-
 ```
