@@ -1,19 +1,28 @@
 ### pypi
 https://pypi.org/project/multiJump/
+### wiki
+https://github.com/seqyuan/multiJump/wiki
 ### Install multiJump
 `pip3 install multiJump`
-### Example
-```
-import getpass
-import multiJump as mJ
+### class
 
-mid_cli_usr = getpass.getuser()
-mid_cmd = 'scp -r -P 50732 /home/yuanzan/test/multiJump_test/NCC-1701U.S.S.Enterprise.tar.gz /home/yuanzan/test/multiJump_test/email_content.html {}@192.168.60.188:/home/yuanzan/12489/'.format(mid_cli_usr)
-end_cmd = '/home/yuanzan/sendmail/sendEmail zanyuan@seqyuan.com copylist@seqyuan.com 【反馈邮件】NCC-1701U.S.S.EnterpriseHi-C文库建库测序分析任务单 ~/12489/email_content.html ~/12489/NCC-1701U.S.S.Enterprise.tar.gz && rm -rf ~/12489/'
+> calss jump_exe_cmd(mid_host_ip = None, mid_port=22, mid_username=None, mid_password=None, mid_connect_timeout=60 , cmd_mid = None, end_host_ip = None, end_port = None, cmd_end_to_exe = None, end_host_user = None)
 
-jump_obj = mJ.jump_exe_cmd(mid_host_ip='c0008', end_host_ip='192.168.60.188', end_port=50732, cmd_mid=None , cmd_end_to_exe='mkdir ~/12489', mid_username=mid_cli_usr, end_host_user=mid_cli_usr)
-jump_obj.exe_cmd()
+The jump_exe_cmd class
+The jump_exe_cmd provides a methods intended for jump to mid IP rum cmd, and then jump to the end IP from mid IP rum cmd.
+> __init__(mid_host_ip = None, mid_port=22, mid_username=None, mid_password=None, mid_connect_timeout=60 , cmd_mid = None, end_host_ip = None, end_port = None, cmd_end_to_exe = None, end_host_user = None)
 
-jump_obj2 = mJ.jump_exe_cmd(mid_host_ip='c0008', end_host_ip='192.168.60.188', end_port=50732, cmd_mid=mid_cmd , cmd_end_to_exe=end_cmd, mid_username=mid_cli_usr, end_host_user=mid_cli_usr)
-jump_obj2.exe_cmd()
-```
+Create an object.
+**Parameters:** * **mid_host_ip** – mid_host_ip
+                  **mid_port** – mid_port
+                  **mid_username** – mid_username
+                  **mid_password** – mid_password
+                  **mid_connect_timeout** – mid_connect_timeout
+                  **cmd_mid** – cmd_mid
+                  **end_host_ip** – end_host_ip
+                  **end_port** – end_port
+                  **cmd_end_to_exe** – cmd_end_to_exe
+                  **end_host_user** – end_host_user
+> exe_cmd()
+Connect the multiple IP then run mid and end command.
+
